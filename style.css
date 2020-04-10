@@ -1,0 +1,15 @@
+.letter-square {
+	border-bottom: 2px solid black;
+	text-align: center;
+	text-transform: uppercase;
+	/* margin: 20px auto; */
+	color: transparent;
+	width: 25px;
+}
+
+.word-area {
+	display: grid;
+	grid-template-rows: 1fr;
+	/* grid-template-columns: repeat(7, 8vmin); */
+	user-select: none;
+}

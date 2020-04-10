@@ -12,12 +12,22 @@
 			<p>A Description of how to play the game!</p>
 		</header>
 		<div>
-			<input type="text" class="user-word-input" />
+			<form action="">
+				<label>Input the word to be guessed </label>
+				<input type="text" class="user-word-input" />
+				<button class="word-submit-button">Submit</button>
+			</form>
 		</div>
 		<div>
-			<input type="text" class="user-letter-guess" />
+			<!-- <form action="" class="letter-guess"> -->
+			<label>Guess A Letter! </label>
+			<input type="text" class="user-letter-guess" onfocus="this.value=''" />
+			<button class="letter-guess-button">Submit</button>
+			<!-- </!-->
 		</div>
 		<!-- Add a Hangman image -->
+		<div class="hangman-area"></div>
+		<div class="word-area"></div>
 
 		<script src="hangmanscript.js"></script>
 	</body>
