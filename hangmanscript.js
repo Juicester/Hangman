@@ -1,6 +1,6 @@
 //console.log('hello');
 
-let word = 'sbitches';
+let word = 'hello';
 
 const wordArea = document.querySelector('.word-area');
 
@@ -11,7 +11,7 @@ wordArea.style.gridTemplateColumns = `repeat(${splitWord.length}, 8vmin)`;
 for (let i = 0; i < splitWord.length; i++) {
 	let div = document.createElement('div');
 	div.classList.add('letter-square');
-	div.setAttribute('data-id', i);
+	// div.setAttribute('data-id', i);
 	div.innerText = splitWord[i];
 	wordArea.appendChild(div);
 }
@@ -20,6 +20,9 @@ const guessButton = document.querySelector('.letter-guess-button');
 // const guessArea = document.querySelector('.letter-guess');
 
 guessButton.addEventListener('click', letterGuess);
+let missedGuessArray = [];
+let correctGuessArray = [];
+let missedTurnCounter = 0;
 
 function letterGuess(event) {
 	const userGuess = document.querySelector('.user-letter-guess').value;
@@ -29,10 +32,28 @@ function letterGuess(event) {
 	for (let i = 0; i < splitWord.length; i++) {
 		if (userGuess.toUpperCase() == splitWord[i].toUpperCase()) {
 			letterBoxes[i].style.color = 'black';
+			correctGuessArray.push(userGuess);
 			// console.log('its the same');
 		} else {
-			// console.log('not the same');
+			// if (missedGuessArray.length === 0) {
+			// 	missedGuessArray.push(userGuess);
+			// } else if (missedGuessArray[length - 1] !== userGuess) {
+			// 	missedGuessArray.push(userGuess);
+			// }
 		}
 	}
-	//userGuess = '';
+	checkWinner();
+	missedTurnCounter++;
+}
+
+function checkWinner() {
+	// console.log('Missed Guess Array: ', missedGuessArray);
+	console.log('Correct Guess Array: ', correctGuessArray);
+	console.log(missedTurnCounter);
+
+	if (correctGuessArray.length === splitWord.length) {
+		console.log('You Win');
+	} else if (missedTurnCounter > 6) {
+		console.log('You Lose :( ');
+	}
 }
