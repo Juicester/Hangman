@@ -1,6 +1,7 @@
 //console.log('hello');
 
-let word = 'hello';
+let word = 'HELLO';
+word = word.toLowerCase();
 
 const wordArea = document.querySelector('.word-area');
 
@@ -25,29 +26,32 @@ let correctGuessArray = [];
 let missedTurnCounter = 0;
 
 function letterGuess(event) {
-	const userGuess = document.querySelector('.user-letter-guess').value;
+	const userGuess = document
+		.querySelector('.user-letter-guess')
+		.value.toLowerCase();
 	console.log(userGuess);
 
 	const letterBoxes = document.querySelectorAll('.letter-square');
-	for (let i = 0; i < splitWord.length; i++) {
-		if (userGuess.toUpperCase() == splitWord[i].toUpperCase()) {
-			letterBoxes[i].style.color = 'white';
-			correctGuessArray.push(userGuess);
-			// console.log('its the same');
-		} else {
-			// if (missedGuessArray.length === 0) {
-			// 	missedGuessArray.push(userGuess);
-			// } else if (missedGuessArray[length - 1] !== userGuess) {
-			// 	missedGuessArray.push(userGuess);
-			// }
+
+	let index = splitWord.indexOf(userGuess);
+
+	if (index == -1) {
+		missedGuessArray.push(userGuess);
+		missedTurnCounter++;
+	} else {
+		console.log('The letter exists');
+		for (let i = 0; i < splitWord.length; i++) {
+			if (userGuess.toUpperCase() == splitWord[i].toUpperCase()) {
+				letterBoxes[i].style.color = 'white';
+				correctGuessArray.push(userGuess);
+			}
 		}
 	}
 	checkWinner();
-	missedTurnCounter++;
 }
 
 function checkWinner() {
-	// console.log('Missed Guess Array: ', missedGuessArray);
+	console.log('Missed Guess Array: ', missedGuessArray);
 	console.log('Correct Guess Array: ', correctGuessArray);
 	console.log(missedTurnCounter);
 
