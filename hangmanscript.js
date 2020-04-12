@@ -20,6 +20,8 @@ for (let i = 0; i < splitWord.length; i++) {
 const guessButton = document.querySelector('.letter-guess-button');
 // const guessArea = document.querySelector('.letter-guess');
 
+const missedGuesses = document.querySelector('.missed-guesses');
+
 guessButton.addEventListener('click', letterGuess);
 let missedGuessArray = [];
 let correctGuessArray = [];
@@ -36,6 +38,11 @@ function letterGuess(event) {
 	let index = splitWord.indexOf(userGuess);
 
 	if (index == -1) {
+		let missedDiv = document.createElement('div');
+		missedDiv.classList.add('missed-letter');
+		missedDiv.innerText = userGuess;
+		missedGuesses.appendChild(missedDiv);
+
 		missedGuessArray.push(userGuess);
 		missedTurnCounter++;
 	} else {
