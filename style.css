@@ -1,3 +1,12 @@
+body,
+html {
+	/* background-image: linear-gradient(rgb(118, 118, 118), rgb(14, 14, 14)); */
+	margin: 0 10px;
+	height: 100%;
+	background-image: url(/images/blackboard_V1.png);
+	background-size: auto;
+}
+
 .letter-square {
 	border-bottom: 2px solid black;
 	text-align: center;
