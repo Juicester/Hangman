@@ -31,7 +31,7 @@ function letterGuess(event) {
 	const letterBoxes = document.querySelectorAll('.letter-square');
 	for (let i = 0; i < splitWord.length; i++) {
 		if (userGuess.toUpperCase() == splitWord[i].toUpperCase()) {
-			letterBoxes[i].style.color = 'black';
+			letterBoxes[i].style.color = 'white';
 			correctGuessArray.push(userGuess);
 			// console.log('its the same');
 		} else {
