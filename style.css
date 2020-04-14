@@ -14,54 +14,73 @@ body {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
 }
+label {
+	display: block;
+}
 
 h1 {
 	font-size: 100px;
 }
 header {
 	grid-row: 1 / span 1;
-	grid-column: 1 / span 2;
-	background-color: turquoise;
+	grid-column: 1 / span 1;
+	padding-left: 70px;
+	/* background-color: turquoise; */
 }
 .word-input {
 	grid-row: 2 / span 1;
 	grid-column: 1 / span 1;
-	background-color: rebeccapurple;
+	padding: 50px;
+	/* background-color: rebeccapurple; */
 }
 .word-area {
 	grid-row: 3 / span 1;
 	grid-column: 1 / span 1;
-	background-color: red;
+	padding-left: 80px;
+	display: grid;
+	grid-template-rows: 1fr;
+	user-select: none;
+	/* background-color: red; */
 }
 .missed-guesses {
 	grid-row: 4 / span 1;
 	grid-column: 2 / span 1;
-	background-color: salmon;
+	padding-left: 45px;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(9, 8vmin);
+	/* background-color: salmon; */
 }
 .image-container {
 	grid-row: 1 / span 3;
 	grid-column: 2 / span 1;
 	/* background-color: black; */
-	/* align-content: center; */
+	padding-left: 40px;
 }
 .guess-container {
 	grid-row: 4 / span 1;
 	grid-column: 1 / span 1;
-	background-color: green;
+	padding-left: 50px;
+	/* background-color: green; */
 }
 
 .letter-square {
 	border-bottom: 2px solid white;
 	text-align: center;
 	text-transform: uppercase;
-	/* margin: 20px auto; */
 	color: transparent;
-	width: 25px;
+	max-height: 40px;
+	max-width: 40px;
 }
 
-.word-area {
-	display: grid;
-	grid-template-rows: 1fr;
-	/* grid-template-columns: repeat(7, 8vmin); */
-	user-select: none;
+#missed-label {
+	grid-row: 1;
+	grid-column: 1 / span 9;
+}
+
+.missed-letter {
+	max-height: 40px;
+	max-width: 40px;
+	padding-bottom: 100px;
+	text-transform: uppercase;
 }
