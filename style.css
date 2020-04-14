@@ -1,17 +1,47 @@
 body,
 html {
-	/* background-image: linear-gradient(rgb(118, 118, 118), rgb(14, 14, 14)); */
 	/* margin: 0 10px; */
 	height: 100%;
-	background-image: url(/images/black-1072366_1920.jpg);
+	width: 100%;
+	background-image: url('/images/black-1072366_1920.jpg');
 	background-size: auto;
+}
+body {
 	font-family: 'Fredericka the Great', cursive;
 	color: white;
-	font-size: 40px;
+	font-size: 36px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 h1 {
 	font-size: 100px;
+}
+header {
+	grid-row: 1 / span 1;
+	grid-column: 1 / span 2;
+}
+.word-input {
+	grid-row: 2 / span 1;
+	grid-column: 1 / span 1;
+}
+.word-area {
+	grid-row: 3 / span 1;
+	grid-column: 1 / span 1;
+}
+.missed-guesses {
+	grid-row: 4 / span 1;
+	grid-column: 2 / span 1;
+}
+.image-container {
+	grid-row: 1 / span 3;
+	grid-column: 2 / span 1;
+	/* align-content: center; */
+}
+.guess-container {
+	grid-row: 4 / span 1;
+	grid-column: 1 / span 1;
 }
 
 .letter-square {

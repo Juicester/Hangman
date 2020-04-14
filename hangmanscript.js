@@ -21,6 +21,7 @@ const guessButton = document.querySelector('.letter-guess-button');
 // const guessArea = document.querySelector('.letter-guess');
 
 const missedGuesses = document.querySelector('.missed-guesses');
+const hangmanImage = document.querySelector('.hangman-image');
 
 guessButton.addEventListener('click', letterGuess);
 let missedGuessArray = [];
@@ -45,6 +46,10 @@ function letterGuess(event) {
 
 		missedGuessArray.push(userGuess);
 		missedTurnCounter++;
+		hangmanImage.setAttribute(
+			'src',
+			`/images/ChalkHangman${missedTurnCounter}.png`
+		);
 	} else {
 		console.log('The letter exists');
 		for (let i = 0; i < splitWord.length; i++) {
