@@ -21,27 +21,33 @@ h1 {
 header {
 	grid-row: 1 / span 1;
 	grid-column: 1 / span 2;
+	background-color: turquoise;
 }
 .word-input {
 	grid-row: 2 / span 1;
 	grid-column: 1 / span 1;
+	background-color: rebeccapurple;
 }
 .word-area {
 	grid-row: 3 / span 1;
 	grid-column: 1 / span 1;
+	background-color: red;
 }
 .missed-guesses {
 	grid-row: 4 / span 1;
 	grid-column: 2 / span 1;
+	background-color: salmon;
 }
 .image-container {
 	grid-row: 1 / span 3;
 	grid-column: 2 / span 1;
+	/* background-color: black; */
 	/* align-content: center; */
 }
 .guess-container {
 	grid-row: 4 / span 1;
 	grid-column: 1 / span 1;
+	background-color: green;
 }
 
 .letter-square {
