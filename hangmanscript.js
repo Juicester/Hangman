@@ -153,7 +153,7 @@ function resetGameBoard() {
 	missedGuessArray = [];
 	correctGuessArray = [];
 	// reset image and make hello again
-	hangmanImage.setAttribute('src', '/images/ChalkHangman0.png');
+	hangmanImage.setAttribute('src', './images/ChalkHangman0.png');
 	wordArea.style.gridTemplateColumns = `repeat(${splitWord.length}, 8vmin)`;
 	makeBoxes(splitWord, wordArea, 'hello-square');
 }
