@@ -3,34 +3,35 @@ word = word.toLowerCase();
 
 const wordArea = document.querySelector('.word-area');
 const wordSubmitButton = document.querySelector('.word-submit-button');
+const resetButton = document.querySelector('.reset-button');
+let wordInput = document.querySelector('.user-word-input');
 
 wordSubmitButton.addEventListener('click', wordSubmit);
 let splitWordInput;
+resetButton.addEventListener('click', resetGameBoard);
 
 function wordSubmit(event) {
-	let wordInput = document
-		.querySelector('.user-word-input')
-		.value.toLowerCase();
-	console.log(wordInput);
-	event.target.previousSibling.previousSibling.value = '';
+	wordInputNew = wordInput.value.toLowerCase();
+	console.log(wordInputNew);
+	wordInput.value = '';
+	event.target.style.display = 'none';
+	wordInput.style.display = 'none';
+	resetButton.style.display = 'inline';
 
-	splitWordInput = wordInput.split('');
+	splitWordInput = wordInputNew.split('');
 
-	wordArea.style.gridTemplateColumns = `repeat(${splitWordInput.length}, 8vmin)`;
-	let wordAreaChild = wordArea.firstElementChild;
-	while (wordAreaChild) {
-		wordArea.removeChild(wordAreaChild);
-		wordAreaChild = wordArea.firstElementChild;
+	if (splitWordInput.length <= 1) {
+		alert('A one Letter word is too easy. Try Again!');
+	} else {
+		wordArea.style.gridTemplateColumns = `repeat(${splitWordInput.length}, 8vmin)`;
+		let wordAreaChild = wordArea.firstElementChild;
+		while (wordAreaChild) {
+			wordArea.removeChild(wordAreaChild);
+			wordAreaChild = wordArea.firstElementChild;
+		}
+		makeBoxes(splitWordInput, wordArea, 'letter-square');
 	}
-
-	makeBoxes(splitWordInput, wordArea, 'letter-square');
-	// for (let i = 0; i < splitWordInput.length; i++) {
-	// 	let div = document.createElement('div');
-	// 	div.classList.add('letter-square');
-	// 	// div.setAttribute('data-id', i);
-	// 	div.innerText = splitWordInput[i];
-	// 	wordArea.appendChild(div);
-	// }
+	// event.target.parentNode.style.display = 'none';
 }
 
 let splitWord = word.split('');
@@ -47,14 +48,6 @@ function makeBoxes(arr, elementToPlace, className) {
 }
 
 makeBoxes(splitWord, wordArea, 'hello-square');
-
-// for (let i = 0; i < splitWord.length; i++) {
-// 	let div = document.createElement('div');
-// 	div.classList.add('letter-square');
-// 	// div.setAttribute('data-id', i);
-// 	div.innerText = splitWord[i];
-// 	wordArea.appendChild(div);
-// }
 
 const guessButton = document.querySelector('.letter-guess-button');
 // const guessArea = document.querySelector('.letter-guess');
@@ -132,7 +125,7 @@ function checkWinner() {
 
 function resetGameBoard() {
 	let child = wordArea.firstElementChild;
-	let child2 = missedGuesses.firstElementChild;
+	let child2 = missedGuesses.firstElementChild.nextElementSibling;
 	while (child) {
 		wordArea.removeChild(child);
 		child = wordArea.firstElementChild;
@@ -141,6 +134,12 @@ function resetGameBoard() {
 		missedGuesses.removeChild(child2);
 		child2 = missedGuesses.firstElementChild;
 	}
+
+	resetButton.style.display = 'none';
+	wordInput.style.display = 'inline';
+	wordSubmitButton.style.display = 'inline';
+	wordArea.style.gridTemplateColumns = `repeat(${splitWord.length}, 8vmin)`;
+	makeBoxes(splitWord, wordArea, 'hello-square');
 }
 
 function isLetter(char) {
