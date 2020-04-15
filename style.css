@@ -1,6 +1,5 @@
 body,
 html {
-	/* margin: 0 10px; */
 	height: 100%;
 	width: 100%;
 	background-image: url('/images/black-1072366_1920.jpg');
@@ -25,13 +24,11 @@ header {
 	grid-row: 1 / span 1;
 	grid-column: 1 / span 1;
 	padding-left: 70px;
-	/* background-color: turquoise; */
 }
 .word-input {
 	grid-row: 2 / span 1;
 	grid-column: 1 / span 1;
 	padding: 50px;
-	/* background-color: rebeccapurple; */
 }
 .word-area {
 	grid-row: 3 / span 1;
@@ -40,7 +37,6 @@ header {
 	display: grid;
 	grid-template-rows: 1fr;
 	user-select: none;
-	/* background-color: red; */
 }
 .missed-guesses {
 	grid-row: 4 / span 1;
@@ -49,19 +45,16 @@ header {
 	display: grid;
 	grid-template-rows: 1fr;
 	grid-template-columns: repeat(9, 8vmin);
-	/* background-color: salmon; */
 }
 .image-container {
 	grid-row: 1 / span 3;
 	grid-column: 2 / span 1;
-	/* background-color: black; */
 	padding-left: 40px;
 }
 .guess-container {
 	grid-row: 4 / span 1;
 	grid-column: 1 / span 1;
 	padding-left: 50px;
-	/* background-color: green; */
 }
 
 .letter-square {
@@ -76,7 +69,6 @@ header {
 	border-bottom: 4px solid white;
 	text-align: center;
 	text-transform: uppercase;
-	/* color: transparent; */
 	max-height: 40px;
 	max-width: 40px;
 }
