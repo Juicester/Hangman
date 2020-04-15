@@ -99,11 +99,11 @@ function letterGuess(event) {
 			missedTurnCounter++;
 			// update the image
 			if (missedTurnCounter > 9) {
-				hangmanImage.setAttribute('src', '/images/ChalkHangman9.png');
+				hangmanImage.setAttribute('src', './images/ChalkHangman9.png');
 			} else {
 				hangmanImage.setAttribute(
 					'src',
-					`/images/ChalkHangman${missedTurnCounter}.png`
+					`./images/ChalkHangman${missedTurnCounter}.png`
 				);
 			}
 			// If it is in the target word, show the letter
