@@ -23,7 +23,6 @@ To Play Click [This](https://juicester.github.io/hangman/)
 I would like to add the following functionality:
 
 - Add on Key Enter
-- Add alt's to images and font
 - Add Style on Alert box, or a different form of alert
 - Add a wrapper on strings that are above 9 characters
 - Add a media query for phones

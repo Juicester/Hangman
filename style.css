@@ -13,10 +13,14 @@ body {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
 }
-label {
-	display: block;
+button {
+	font-size: 20px;
+	border-radius: 3px;
 }
-
+button:hover {
+	background-color: black;
+	color: white;
+}
 h1 {
 	font-size: 100px;
 }
@@ -25,18 +29,37 @@ header {
 	grid-column: 1 / span 1;
 	padding-left: 70px;
 }
-.word-input {
-	grid-row: 2 / span 1;
-	grid-column: 1 / span 1;
-	padding: 50px;
+input {
+	font-size: 19px;
 }
-.word-area {
-	grid-row: 3 / span 1;
+label {
+	display: block;
+}
+
+.guess-container {
+	grid-row: 4 / span 1;
 	grid-column: 1 / span 1;
-	padding-left: 80px;
-	display: grid;
-	grid-template-rows: 1fr;
-	user-select: none;
+	padding-left: 50px;
+}
+.hello-square {
+	border-bottom: 4px solid white;
+	text-align: center;
+	text-transform: uppercase;
+	max-height: 40px;
+	max-width: 40px;
+}
+.image-container {
+	grid-row: 1 / span 3;
+	grid-column: 2 / span 1;
+	padding-left: 40px;
+}
+.letter-square {
+	border-bottom: 4px solid white;
+	text-align: center;
+	text-transform: uppercase;
+	color: transparent;
+	max-height: 40px;
+	max-width: 40px;
 }
 .missed-guesses {
 	grid-row: 4 / span 1;
@@ -46,58 +69,30 @@ header {
 	grid-template-rows: 1fr;
 	grid-template-columns: repeat(9, 8vmin);
 }
-.image-container {
-	grid-row: 1 / span 3;
-	grid-column: 2 / span 1;
-	padding-left: 40px;
-}
-.guess-container {
-	grid-row: 4 / span 1;
-	grid-column: 1 / span 1;
-	padding-left: 50px;
-}
-
-.letter-square {
-	border-bottom: 4px solid white;
-	text-align: center;
-	text-transform: uppercase;
-	color: transparent;
-	max-height: 40px;
-	max-width: 40px;
-}
-.hello-square {
-	border-bottom: 4px solid white;
-	text-align: center;
-	text-transform: uppercase;
-	max-height: 40px;
-	max-width: 40px;
-}
-
-#missed-label {
-	grid-row: 1;
-	grid-column: 1 / span 9;
-}
-
 .missed-letter {
 	max-height: 40px;
 	max-width: 40px;
 	padding-bottom: 100px;
 	text-transform: uppercase;
 }
-
 .reset-button {
 	display: none;
 }
-
-button {
-	font-size: 20px;
-	border-radius: 3px;
+.word-area {
+	grid-row: 3 / span 1;
+	grid-column: 1 / span 1;
+	padding-left: 80px;
+	display: grid;
+	grid-template-rows: 1fr;
+	user-select: none;
 }
-button:hover {
-	background-color: black;
-	color: white;
+.word-input {
+	grid-row: 2 / span 1;
+	grid-column: 1 / span 1;
+	padding: 50px;
 }
 
-input {
-	font-size: 19px;
+#missed-label {
+	grid-row: 1;
+	grid-column: 1 / span 9;
 }
