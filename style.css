@@ -72,6 +72,14 @@ header {
 	max-height: 40px;
 	max-width: 40px;
 }
+.hello-square {
+	border-bottom: 2px solid white;
+	text-align: center;
+	text-transform: uppercase;
+	/* color: transparent; */
+	max-height: 40px;
+	max-width: 40px;
+}
 
 #missed-label {
 	grid-row: 1;
